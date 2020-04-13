@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Side Navigation Bar</title>
+<script type="text/javascript" src="../../fontawesome.js"></script>
+<script type="text/javascript" src="../../jquery_min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".hamburger").click(function(){
+			  $(".wrapper").toggleClass("collapse");
+		});
+	});
+</script>
+<link rel="stylesheet" href="../../style2.css"/><script>
+var names = ["Edinburgh Fringe Festival","The world's greatest platform for creative freedom"];
+setInterval(function() {
+  var rand = Math.floor(Math.random() * 2);
+  document.getElementById("text").innerHTML = names[rand];
+}, 2000);
+</script>
+</head>
+<body>
+<div class="ads">
+	<div class="mainads" id="text">Welcome to edinburgh</div>
+</div>
+<div class="header">
+	<div class="inner_header"><a class="logo" href="#"></a></div>
+	<div class="contact"><p><span style="color:#D2D2D2; font-size:16px;">Comments or questions about the Fringe?</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
+</div>
+<div class="mainbody">
+<div class="wrapper">
+  <div class="top_navbar">
+    <div class="hamburger">
+       <div class="one"></div>
+       <div class="two"></div>
+       <div class="three"></div>
+    </div>
+    <div class="top_menu">
+      <ul>
+				<li><a href="fringe_homepage.py">HOME</a></li>
+				<li><a href="fringe_about.py">ABOUT</a></li>
+			  <li><a href="fringe_map.py">FRINGE MAP</a></li>
+				<li><a href="fringe_spatialmap.py">VENUE FINDER</a></li>
+				<li><a href="fringe_distance.py">DISTANCE CALCULATOR</a></li>
+      </ul>
+    </div>
+  </div>
+
+ <div class="sidebar"></div>
+  <div class="main_container">
+    <div class="item">
+						<br>
+						<h1> Distance Calculator </h1>
+						<br>
+
+						<form style="margin-top:20px;margin-left:30px;font-size:20px;"name="venue_hub" id="venue_hub_form" action="./fringe_distance.py" method="get">
+								Select Venue: <select style="font-size:18px;" name="venue" onchange="changeDropDown(this.value)"><br>
+									<option value=0 >Not Selected</option>
+									<option value=1 >Alba Flamenca//Flamenco/Scotland/</option>
+									<option value=2>Bedlam Theatre</option>
+									<option value=3>Brewhemia</option>
+									<option value=4>Rose Theatre Edinburgh</option>
+									<option value=5>The Lyceum</option>
+									<option value=6>King's Theatre</option>
+									<option value=7>Pleasance</option>
+									<option value=8>The Jazz Bar</option>
+									<option value=9>St Mary's Catholic Cathedral</option>
+									<option value=10>Opium Nightclub</option>
+									<option value=11 >The Golf Tavern</option>
+									<option value=12>Edinburgh International Exhibition of Photography</option>
+									<option value=13>Scottish Poetry Library</option>
+									<option value=14>CC Blooms</option>
+									<option value=15>Fingers Piano Bar</option>
+									<option value=16>Edinburgh International Conference Centre</option>
+									<option value=17>Au Bar</option>
+									<option value=18>George Square Gardens</option>
+									<option value=19>Tribe Yoga Quartermile</option>
+									<option value=20>Edinburgh College of Art</option>
+									<option value=21>Marcos</option>
+									<option value=22>Dynamic Earth</option>
+								</select> </br><br>
+
+								Select Transport Hub: <select style="font-size:18px;"name="transport" onchange="changeDropDown(this.value)"><br>
+									<option value=0 >Not Selected</option>
+									<option value=1 >Edinburgh Waverley Train Station(Train Station)</option>
+									<option value=2>Haymarket Train Station(Train Station)</option>
+									<option value=3>NCP Car Park Edinburgh Castle Terrace(Car Park)</option>
+									<option value=4>Q-Park Quartermile(Car Park)</option>
+									<option value=5>Nicolson Square Car Park(Car Park)</option>
+									<option value=6>West End Tram Stop(Tram Stop)</option>
+									<option value=7>Princes Street Tram Stop(Tram Stop)</option>
+									<option value=8>Edinburgh Bus Station(Bus Station)</option>
+									</select> </br><br>
+
+							Select Walking Tour: <select style="font-size:18px;" name="tour" onchange="changeDropDown(this.value)">
+									<option value=0 >Not Selected</option>
+									<option value=1 >Canongate Swing</option>
+									<option value=2>Expression Express</option>
+									<option value=3>The Comedy Train</option>
+									<option value=4>Full Fringe Experience</option>
+									<option value=5>Old Town Route</option>
+									</select> </br><br>
+
+							<input style="font-size:18px" type="submit" value="Submit">
+							</form>
+
+							<br><br>
+
+							<h1> Distance Calculator Results </h1>
+						 	<h2 style="margin-top:30px;margin-left:30px;text-decoration:underline;"> Transport Hubs </h2>
+									<h3 style="margin-left:30px;margin-top:10px;"> Distance between Selected Venue and Transport Hub:</h3> <br>
+									 <p style="margin-left:30px;margin-bottom:15px;">
+										{{vh_dist}} </p>
+
+									<h3 style="margin-left:30px;"> Nearest Transport Hub to Selected Venue:</h3> <br>
+
+									<p style="margin-left:30px;">
+										{{vh_nn}} </p>
+
+										<br></br>
+
+								<h2  style="margin-left:30px;text-decoration:underline;"> Walking Tours </h2>
+
+									<h3 style="margin-left:30px;margin-top:10px;">Distance Between Selected Transport Hub and Walking Tour: </h3><br>
+									<p style="margin-left:30px;">
+										{{tt_start}} <br>
+										{{tt_end}}
+									</p>
+
+										<br>
+
+									<h3 style="margin-left:30px;"> Length of Tour: </h3> <br>
+										<p style="margin-left:30px;"> {{tour_length}}
+									</p>
+
+			    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function openForm1() {
+  document.getElementById("mySidenav1").style.width = "200px";
+}
+
+function closeForm1() {
+  document.getElementById("mySidenav1").style.width = "0";
+}
+function openForm2() {
+  document.getElementById("mySidenav2").style.width = "200px";
+}
+
+function closeForm2() {
+  document.getElementById("mySidenav2").style.width = "0";
+}
+</script>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000);
+}
+</script>
+
+<div class="footer">
+<div class="section1">
+	<div class="terms">
+    <p style="font-size:20px; color:white; line-height:35px;font-weight:bold;">Terms&nbsp;&&nbsp; conditions&nbsp |&nbsp Privacy&nbsp policy</p>
+    </div>
+    <div class="social">
+    	<ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        </ul>
+    </div>
+</div>
+<div class="section2">
+	<div class="information">
+	    <div class="address"><div style="display:inline-block;width:auto;;height:15px;"><img src="../../images/add_logo.png" /></div><div style="display:inline-block;width:auto;"><p style="color:#CCC;font-size:15px;vertical-align:center">&nbsp;&nbsp;180 High Street, Edinburgh, EH1 1QS, United Kingdom</p></div></div>
+	    <div class="tele"><div style="display:inline-block;width:auto;height:15px;"><img src="../../images/tele_logo.png" /></div><div style="display:inline-block;width:auto;"><p style="color:#ccc;font-size:15px;">&nbsp;&nbsp;+44(0) 131 226 0026</p></div></div>
+	    <div class="copyriight"><p style="color:#ccc;font-size:17px;line-height:60px;text-align:left;">@&nbsp;2020 EFFS Registerer Charity SC002995</p></div>
+	 </div>
+</div>
+
+</body>
+</html>

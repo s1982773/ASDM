@@ -1,0 +1,99 @@
+Content-Type: text/html
+
+<!DOCTYPE html>
+<head>
+<title>Fringe Map</title>
+<script type="text/javascript" src="../../fontawesome.js"></script>
+<script type="text/javascript" src="../../jquery_min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".hamburger").click(function(){
+		$(".wrapper").toggleClass("collapse");
+		});
+	});
+</script>
+<link rel="stylesheet" href="../../style2.css"/>
+<script>
+var names = ["Edinburgh Fringe Festival","The world's greatest platform for creative freedom"];
+setInterval(function() {
+  var rand = Math.floor(Math.random() * 2);
+  document.getElementById("text").innerHTML = names[rand];
+}, 2000);
+</script>
+</head>
+<body>
+<div class="ads">
+	<div class="mainads" id="text">Welcome to edinburgh</div>
+</div>
+<div class="header">
+	<div class="inner_header"><a class="logo" href="#"></a></div>
+	<div class="contact"><p><span style="color:#D2D2D2; font-size:16px;">Comments or questions about the Fringe?</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
+</div>
+<div class="mainbody">
+<div class="wrapper">
+  <div class="top_navbar">
+    <div class="hamburger">
+       <div class="one"></div>
+       <div class="two"></div>
+       <div class="three"></div>
+    </div>
+    <div class="top_menu">
+      <ul>
+        <li><a href="fringe_homepage.py">HOME</a></li>
+				<li><a href="fringe_about.py">ABOUT</a></li>
+			  <li><a href="fringe_map.py">FRINGE MAP</a></li>
+				<li><a href="fringe_spatialmap.py">VENUE FINDER</a></li>
+				<li><a href="fringe_distance.py">DISTANCE CALCULATOR</a></li>
+      </ul>
+    </div>
+  </div>
+
+ <div class="sidebar"></div>
+
+
+  <div class="main_container">
+    <div class="item">{{map}}</div>
+  </div>
+</div>
+</div>
+
+<script>
+function openForm1() {
+  document.getElementById("mySidenav1").style.width = "500px";
+}
+
+function closeForm1() {
+  document.getElementById("mySidenav1").style.width = "0";
+}
+function openForm2() {
+  document.getElementById("mySidenav2").style.width = "500px";
+}
+
+function closeForm2() {
+  document.getElementById("mySidenav2").style.width = "0";
+}
+</script>
+<div class="footer">
+<div class="section1">
+	<div class="terms">
+    <p style="font-size:20px; color:white; line-height:35px;font-weight:bold;">Terms&nbsp;&&nbsp; conditions&nbsp |&nbsp Privacy&nbsp policy</p>
+    </div>
+    <div class="social">
+    	<ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        </ul>
+    </div>
+</div>
+<div class="section2">
+	<div class="information">
+	    <div class="address"><div style="display:inline-block;width:auto;;height:15px;"><img src="../../images/add_logo.png" /></div><div style="display:inline-block;width:auto;"><p style="color:#CCC;font-size:15px;vertical-align:center">&nbsp;&nbsp;180 High Street, Edinburgh, EH1 1QS, United Kingdom</p></div></div>
+	    <div class="tele"><div style="display:inline-block;width:auto;height:15px;"><img src="../../images/tele_logo.png" /></div><div style="display:inline-block;width:auto;"><p style="color:#ccc;font-size:15px;">&nbsp;&nbsp;+44(0) 131 226 0026</p></div></div>
+	    <div class="copyriight"><p style="color:#ccc;font-size:17px;line-height:60px;text-align:left;">@&nbsp;2020 EFFS Registerer Charity SC002995</p></div>
+	 </div>
+</div>
+
+</body>
+</html>

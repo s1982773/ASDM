@@ -1,0 +1,168 @@
+Content-Type: text/html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Side Navigation Bar</title>
+<script type="text/javascript" src="../../fontawesome.js"></script>
+<script type="text/javascript" src="../../jquery_min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".hamburger").click(function(){
+			  $(".wrapper").toggleClass("collapse");
+		});
+	});
+</script>
+<link rel="stylesheet" href="../../style2.css"/><script>
+var names = ["Edinburgh Fringe Festival","The world's greatest platform for creative freedom"];
+setInterval(function() {
+  var rand = Math.floor(Math.random() * 2);
+  document.getElementById("text").innerHTML = names[rand];
+}, 2000);
+</script>
+</head>
+<body>
+<div class="ads">
+	<div class="mainads" id="text">Welcome to edinburgh</div>
+</div>
+<div class="header">
+	<div class="inner_header"><a class="logo" href="#"></a></div>
+	<div class="contact"><p><span style="color:#D2D2D2; font-size:16px;">Comments or questions about the Fringe?</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
+</div>
+<div class="mainbody">
+<div class="wrapper">
+  <div class="top_navbar">
+    <div class="hamburger">
+       <div class="one"></div>
+       <div class="two"></div>
+       <div class="three"></div>
+    </div>
+    <div class="top_menu">
+      <ul>
+				<li><a href="fringe_homepage.py">HOME</a></li>
+				<li><a href="fringe_about.py">ABOUT</a></li>
+			  <li><a href="fringe_map.py">FRINGE MAP</a></li>
+				<li><a href="fringe_spatialmap.py">VENUE FINDER</a></li>
+				<li><a href="#">DISTANCE CALCULATOR</a></li>
+      </ul>
+    </div>
+  </div>
+
+ <div class="sidebar"></div>
+  <div class="main_container">
+    <div class="item">
+      <div class="about" style="padding-left:40px;padding-top:40px;">
+				<h1 style="font-size:33px;">ABOUT SECTION </h1>
+				<p style="padding-top:15px;font-size:20px;">Welcome to the Fringe Accessibility Web Map! Here at the festival, we believe that everyone has the right to experience the thrill of live performance.<br> Nothing should have to stop our visitors with special needs to enjoy the Fringe!
+					To help with this, browse this webpage and try out one of our accessibility <br>tools to help you plan your journey to the Fringe in the most suitable way.
+				</p>
+			</div>
+			<div class="subabout" style="padding-left:40px;padding-top:15px">
+				<h3 style="font-size:22px;">The Fringe Map</h3>
+				<p style="padding-top:5px;font-size:20px;">-&nbsp; Search where in Edinburgh shows and walking tours are on display</p>
+			</div>
+			<div class="subabout" style="padding-left:40px;padding-top:15px">
+				<h3 style="font-size:22px;">The Accessibility Venue Finder</h3>
+				<p style="padding-top:5px;font-size:20px;">-&nbsp; Search for venues suitable for specific needs</p>
+			</div>
+			<div class="subabout" style="padding-left:40px;padding-top:15px">
+				<h3 style="font-size:22px;">Distance Calculator</h3>
+				<p style="padding-top:5px;font-size:20px;">-&nbsp; Find out the distance of walking tours and integrate these with your travel plans</p>
+			</div class="subabout">
+			<div class="subabout" style="padding-left:40px;padding-top:15px">
+				<p style="padding-top:5px;padding-bottom: 5px;font-size:23px;">To give you inspiration, have a look at the profiles below and how these may browse our accessibility tools to plan a visit to the festival.</p>
+			</div>
+			<div class="subabout" style="padding-left:40px;padding-top:15px">
+				<h3 style="font-size:22px;">A Wheelchair User </h3>
+				<p style="padding-top:5px;font-size:20px;">-&nbsp; Browse the Venue Finder for venues with wheelchair access<br>
+-&nbsp; Browse the Venue Finder for venues with disabled toilets<br>
+-&nbsp; Browse the Venue Finder for venues within a certain distance of a blue card parking zone</p>
+			</div>
+			<div class="subabout" style="padding-left:40px;padding-top:15px">
+				<h3 style="font-size:22px;">Someone with Strict Dietary Requirements </h3>
+				<p style="padding-top:5px;font-size:20px;">Browse the Venue Finder for venues with food available</p>
+			</div>
+			<div class="subabout" style="padding-left:40px;padding-top:15px">
+				<h3 style="font-size:22px;">Someone with Walking Difficulties </h3>
+				<ul style="padding-top:5px;font-size:20px;">
+					<li>-&nbsp; Browse the Venue Finder for venues within a certain distance from any transportation hub</li>
+					<li>-&nbsp; Use the Distance Calculator to calculate the length of walking tours</li>
+					<li>-&nbsp; Use the Distance Calculator to calculate the length of a walking tour plus the distances to and from your selected transportation hub</li>
+			</ul>
+			</div>
+			<div class="subabout" style="padding-left:40px;padding-top:10px">
+				<h3 style="font-size:24px;">Someone with anxiety or high sensitivity to crowds </h3>
+				<ul style="padding-top:10px;font-size:20px;">
+					<li>-&nbsp; Browse the Venue Finder for small sized venues</li>
+					<li>-&nbsp; Browse the Venue Finder for venues that are not located in crowded parts of Edinburgh</li>
+					<li>-&nbsp; Browse the Venue Finder for venues that lie within a specified distance of a preferred transport hub</li>
+				</ul>
+			</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function openForm1() {
+  document.getElementById("mySidenav1").style.width = "200px";
+}
+
+function closeForm1() {
+  document.getElementById("mySidenav1").style.width = "0";
+}
+function openForm2() {
+  document.getElementById("mySidenav2").style.width = "200px";
+}
+
+function closeForm2() {
+  document.getElementById("mySidenav2").style.width = "0";
+}
+</script>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000);
+}
+</script>
+
+<div class="footer">
+<div class="section1">
+	<div class="terms">
+    <p style="font-size:20px; color:white; line-height:35px;font-weight:bold;">Terms&nbsp;&&nbsp; conditions&nbsp |&nbsp Privacy&nbsp policy</p>
+    </div>
+    <div class="social">
+    	<ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        </ul>
+    </div>
+</div>
+<div class="section2">
+	<div class="information">
+	    <div class="address"><div style="display:inline-block;width:auto;;height:15px;"><img src="../../images/add_logo.png" /></div><div style="display:inline-block;width:auto;"><p style="color:#CCC;font-size:15px;vertical-align:center">&nbsp;&nbsp;180 High Street, Edinburgh, EH1 1QS, United Kingdom</p></div></div>
+	    <div class="tele"><div style="display:inline-block;width:auto;height:15px;"><img src="../../images/tele_logo.png" /></div><div style="display:inline-block;width:auto;"><p style="color:#ccc;font-size:15px;">&nbsp;&nbsp;+44(0) 131 226 0026</p></div></div>
+	    <div class="copyriight"><p style="color:#ccc;font-size:17px;line-height:60px;text-align:left;">@&nbsp;2020 EFFS Registerer Charity SC002995</p></div>
+	 </div>
+</div>
+
+</body>
+</html>
